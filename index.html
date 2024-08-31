@@ -1,126 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <title>Frontend Mentor | Multi-step form</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Multi-step form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="global.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="diplayStep" id="diplayStep">
+        <!-- Sidebar start -->
+        <div class="circle">
+          <div class="circle-1" id="circle-1"><p>1</p></div>
+          <div class="circle-2" id="circle-2"><p>2</p></div>
+          <div class="circle-3" id="circle-3"><p>3</p></div>
+          <div class="circle-4" id="circle-4"><p>4</p></div>
+        </div>
 
-  <!-- Sidebar start -->
+        <div class="steps">
+          <div class="step1">
+            <p>Step 1</p>
+            <span>Your info</span>
+          </div>
+          <div class="step1">
+            <p>Step 2</p>
+            <span>Select plan</span>
+          </div>
+          <div class="step1">
+            <p>Step 3</p>
+            <span>Add-ons</span>
+          </div>
+          <div class="step1">
+            <p>Step 4</p>
+            <span>Summary</span>
+          </div>
+        </div>
+        <!-- Sidebar end -->
+      </div>
 
-  Step 1
-  Your info
+      <div class="stepContainer" id="stepContainer">
+        <div class="affichStep">
+          <div class="stepInfo" id="stepInfo">
+            <!-- Step 1 start -->
+            <h1>Personal info</h1>
+            <p class="decription">
+              Please provide your name, email address, and phone number.
+            </p>
+            <div class="flexError">
+              <p>Name</p>
+              <span class="errorName" id="errorName"></span>
+            </div>
+            <input
+              type="text"
+              name=""
+              id="infoName"
+              placeholder="e.g. Stephen King"
+            />
+            <div class="flexError">
+              <p>Email Address</p>
+              <span class="errorName" id="errorName"></span>
+            </div>
+            <input
+              type="email"
+              name=""
+              id="infoMail"
+              placeholder="e.g. stephenking@lorem.com "
+            />
+            <div class="flexError">
+              <p>Phone Number</p>
+              <span class="errorName" id="errorName"></span>
+            </div>
+            <input
+              type="number"
+              name=""
+              id="infoMail"
+              placeholder=" e.g. +1 234 567 890"
+            />
 
-  Step 2
-  Select plan
+            <div class="buttonContainerStepOne">
+              <button class="nextStep" onclick="goStepTwo()">Next Step</button>
+            </div>
 
-  Step 3
-  Add-ons
+            <!-- Step 1 end -->
+          </div>
+        </div>
 
-  Step 4
-  Summary
+        <!------------------- Select Plan ------------------->
+        <!-- Step 2 start -->
 
-  <!-- Sidebar end -->
+        <div class="stepPlan" id="stepPlan">
+          <h1>Select your plan</h1>
+          <p class="description">
+            You have the option of monthly or yearly billing.
+          </p>
+          <div class="planMonth" id="planMonth">
+            <button class="planButton" id="moiseArcade" onclick="getPrice1()">
+              <img src="./assets/images/icon-arcade.svg" alt="arcadePlan-img" />
+              <p>Arcade</p>
+              <span class="priceMonth" id="priceMonth">$9/mo</span>
+            </button>
 
-  <!-- Step 1 start -->
+            <button class="planButton" id="moiseArcade" onclick="getPrice1()">
+              <img
+                src="./assets/images/icon-advanced.svg"
+                alt="advancePlan-img"
+              />
+              <p>Advanced</p>
+              <span class="priceMonth" id="priceMonth">Pro $12/mo</span>
+            </button>
 
-  Personal info
-  Please provide your name, email address, and phone number.
+            <button class="planButton" id="moiseArcade" onclick="getPrice1()">
+              <img src="./assets/images/icon-pro.svg" alt="proPlan-img" />
+              <p>Pro</p>
+              <span class="priceMonth" id="priceMonth">$15/mo</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  Name
-  e.g. Stephen King
+    Monthly Yearly Go Back Next Step
 
-  Email Address
-  e.g. stephenking@lorem.com
+    <!-- Step 2 end -->
 
-  Phone Number
-  e.g. +1 234 567 890
+    <!-- Step 3 start -->
 
-  Next Step
+    Pick add-ons Add-ons help enhance your gaming experience. Online service
+    Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save
+    +$2/mo Customizable Profile Custom theme on your profile +$2/mo Go Back Next
+    Step
 
-  <!-- Step 1 end -->
+    <!-- Step 3 end -->
 
-  <!-- Step 2 start -->
+    <!-- Step 4 start -->
 
-  Select your plan
-  You have the option of monthly or yearly billing.
+    Finishing up Double-check everything looks OK before confirming.
 
-  Arcade
-  $9/mo
+    <!-- Dynamically add subscription and add-on selections here -->
 
-  Advanced
-  $12/mo
+    Total (per month/year) Go Back Confirm
 
-  Pro
-  $15/mo
+    <!-- Step 4 end -->
 
-  Monthly
-  Yearly
+    <!-- Step 5 start -->
 
-  Go Back
-  Next Step
+    Thank you! Thanks for confirming your subscription! We hope you have fun
+    using our platform. If you ever need support, please feel free to email us
+    at support@loremgaming.com.
 
-  <!-- Step 2 end -->
+    <!-- Step 5 end -->
 
-  <!-- Step 3 start -->
-
-  Pick add-ons
-  Add-ons help enhance your gaming experience.
-
-  Online service
-  Access to multiplayer games
-  +$1/mo
-
-  Larger storage
-  Extra 1TB of cloud save
-  +$2/mo
-
-  Customizable Profile
-  Custom theme on your profile
-  +$2/mo
-
-  Go Back
-  Next Step
-
-  <!-- Step 3 end -->
-
-  <!-- Step 4 start -->
-
-  Finishing up
-  Double-check everything looks OK before confirming.
-
-  <!-- Dynamically add subscription and add-on selections here -->
-
-  Total (per month/year)
-
-  Go Back
-  Confirm
-
-  <!-- Step 4 end -->
-
-  <!-- Step 5 start -->
-
-  Thank you!
-
-  Thanks for confirming your subscription! We hope you have fun 
-  using our platform. If you ever need support, please feel free 
-  to email us at support@loremgaming.com.
-
-  <!-- Step 5 end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">JUSTICE SUNDAY GABRIEL</a>.
+    </div>
+  </body>
 </html>
