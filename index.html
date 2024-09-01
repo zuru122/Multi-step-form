@@ -20,14 +20,15 @@
       rel="stylesheet"
     />
     <!-- styles -->
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
         font-size: 11px;
         text-align: center;
+        padding: 20px 0;
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
@@ -36,13 +37,13 @@
   </head>
   <body>
     <div class="container" id="container">
-      <div class="diplayStep" id="diplayStep">
+      <div class="displayStep" id="displayStep">
         <!-- Sidebar start -->
         <div class="circle">
-          <div class="circle-1" id="circle-1"><p>1</p></div>
-          <div class="circle-2" id="circle-2"><p>2</p></div>
-          <div class="circle-3" id="circle-3"><p>3</p></div>
-          <div class="circle-4" id="circle-4"><p>4</p></div>
+          <div class="circle-1 circle--style" id="circle-1"><p>1</p></div>
+          <div class="circle-2 circle--style" id="circle-2"><p>2</p></div>
+          <div class="circle-3 circle--style" id="circle-3"><p>3</p></div>
+          <div class="circle-4 circle--style" id="circle-4"><p>4</p></div>
         </div>
 
         <div class="steps">
@@ -71,7 +72,7 @@
           <div class="stepInfo" id="stepInfo">
             <!-- Step 1 start -->
             <h1>Personal info</h1>
-            <p class="decription">
+            <p class="decription bottom--margin">
               Please provide your name, email address, and phone number.
             </p>
             <div class="flexError">
@@ -82,7 +83,7 @@
               type="text"
               name=""
               id="infoName"
-              placeholder="e.g. Stephen King"
+              placeholder=" e.g. Stephen King"
             />
             <div class="flexError">
               <p>Email Address</p>
@@ -92,7 +93,7 @@
               type="email"
               name=""
               id="infoMail"
-              placeholder="e.g. stephenking@lorem.com "
+              placeholder=" e.g. stephenking@lorem.com "
             />
             <div class="flexError">
               <p>Phone Number</p>
@@ -101,7 +102,7 @@
             <input
               type="number"
               name=""
-              id="infoMail"
+              id="infoNumber"
               placeholder=" e.g. +1 234 567 890"
             />
 
@@ -392,7 +393,10 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">JUSTICE SUNDAY GABRIEL</a>.
+      >. Coded by
+      <a href="https://github.com/zuru122/Multi-step-form"
+        >JUSTICE SUNDAY GABRIEL</a
+      >.
     </div>
 
     <script src="script.js"></script>
