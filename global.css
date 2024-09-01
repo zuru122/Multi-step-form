@@ -9,7 +9,7 @@ body {
   background-color: hsl(229, 24%, 87%);
 }
 button {
-  font-family: "Ububtu", sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .circle--style {
@@ -25,4 +25,39 @@ button {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+}
+
+/* Button */
+.nextStep {
+  padding: 15px 20px;
+  width: 120px;
+  background-color: hsl(213, 96%, 18%);
+  color: #fff;
+  border: solid 1px rgba(0, 0, 255, 0);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nextStep:hover {
+  background-color: hsl(243, 100%, 62%, 0.4);
+}
+
+.goBack {
+  padding: 15px 20px;
+  width: 120px;
+  background-color: hsl(255, 255, 0);
+  color: hsl(231, 11%, 63%);
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }

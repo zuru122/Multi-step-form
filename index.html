@@ -22,6 +22,7 @@
     <!-- styles -->
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css" />
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
@@ -87,7 +88,7 @@
             />
             <div class="flexError">
               <p>Email Address</p>
-              <span class="errorName" id="errorName"></span>
+              <span class="errorMail" id="errorMail"></span>
             </div>
             <input
               type="email"
@@ -97,7 +98,7 @@
             />
             <div class="flexError">
               <p>Phone Number</p>
-              <span class="errorName" id="errorName"></span>
+              <span class="errorNum" id="errorNum"></span>
             </div>
             <input
               type="number"
@@ -117,7 +118,7 @@
           <!-- Step 2 start -->
           <div class="stepPlan" id="stepPlan">
             <h1>Select your plan</h1>
-            <p class="description">
+            <p class="description para-size bottom--margin">
               You have the option of monthly or yearly billing.
             </p>
             <div class="planMonth" id="planMonth">
@@ -182,11 +183,11 @@
 
             <div class="switch">
               <p class="monthly">Monthly</p>
-              <label for="" class="check">
+              <label class="check">
                 <input
                   type="checkbox"
                   id="checkbox"
-                  class="switch"
+                  id="switch"
                   onclick="reset()"
                 />
                 <span></span>
@@ -324,15 +325,15 @@
           <!-- Step 4 start -->
           <div class="stepSummary" id="stepSummary">
             <h1>Finishing up</h1>
-            <p class="description">
+            <p class="description bottom--margin">
               Double-check everything looks OK before confirming.
             </p>
             <div class="resume">
               <div class="containerResume">
                 <div id="resumeMonth">
-                  <div class="flexReume">
+                  <div class="flexResume">
                     <div>
-                      <h4 id="modeReume">Choose a plan</h4>
+                      <h4 id="modeResume">Choose a plan</h4>
                       <button onclick="goFromFourToTwo()">Change</button>
                     </div>
                     <label for="" id="priceResume"></label>
@@ -364,10 +365,11 @@
                 </button>
 
                 <button onclick="goToStepThankYou()" class="nextStep">
-                  confirm
+                  Confirm
                 </button>
               </div>
             </div>
+
             <!-- Step 4 end -->
           </div>
           <!-- Thank you -->
