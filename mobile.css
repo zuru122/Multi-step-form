@@ -137,6 +137,14 @@
     border: 1px solid rgba(103, 92, 92, 0.628);
   }
 
+  .stepInfo h1 {
+    font-size: 20px;
+  }
+
+  .stepInfo p {
+    font-size: 12px;
+  }
+
   #stepPlan {
     /* display: none; */
     flex-direction: column;
