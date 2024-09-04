@@ -1,3 +1,5 @@
+// STEPS BUTTONS
+
 function goStepTwo(){
     checkName();
     checkNum();
@@ -5,7 +7,16 @@ function goStepTwo(){
     Achieve();
 }
 
-// CheckI nputs
+function backStepOne(){
+    stepInfo.style.display = "flex";
+    stepPlan.style.display =  "none";
+    circle1.style.color =  "#000"
+    circle1.style.backgroundColor = "#fff";
+    circle2.style.backgroundColor =  "rgb(255, 255, 255, 0)";
+    circle2.style.color = "#fff";
+}
+
+// Check Inputs
 function  checkName(){
     let myNameInput = document.getElementById("infoName");
 
@@ -64,7 +75,7 @@ function Achieve() {
 
   if (
     myNumInput.value.trim().length === 10 &&
-    myNumRegex.test(myNumInput.value) == true &&
+    myNumRegex.test(myNumInput.value) === true &&
     myMailInput.value.trim().length !== 0 &&
     myMailRegex.test(myMailInput.value) === true &&
     myNameInput.value.trim().length !== 0 &&
@@ -78,3 +89,28 @@ function Achieve() {
     circle2.style.color = "black";
   }
 }
+
+
+
+
+// CHECK BOX (TOOGLE BETWEEN  MONTH AND YEAR PLANS)
+
+checkBox =  document
+.getElementById("switch")
+.addEventListener("click", event=>{
+    if(event.target.checked){
+        planYear.style.display =  "flex";
+        planMonth.style.display =  "none";
+        adOnAnne.style.display = "flex";
+        adOnMois.style.display =  "none";
+    }
+    else{
+        planYear.style.display = "none";
+        planMonth.style.display = "flex";
+        adOnAnne.style.display = "none";
+        adOnMois.style.display =  "flex";
+
+    }
+});
+
+// Change color of Button plan after click

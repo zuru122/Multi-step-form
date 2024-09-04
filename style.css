@@ -281,6 +281,9 @@
 #modeTotal {
   color: hsl(231, 11%, 63%);
 }
+
+/* Toogle */
+
 .switch {
   display: flex;
   justify-content: center;
