@@ -16,6 +16,24 @@ function backStepOne(){
     circle2.style.color = "#fff";
 }
 
+function goStepThree(){
+  console.log(typeof document.getElementById("totalPrice").innerHTML);
+  if(document.getElementById("totalPrice").innerHTML == ""){
+    console.log(document.getElementById("totalPrice").innerHTML)
+    document.getElementById("totalPrice").innerHTML = "0";
+    console.log(document.getElementById("totalPrice").innerHTML);
+  }
+  checkPlan();
+}
+
+function  backStepTwo(){
+  stepPlan.style.display = "flex";
+  stepAddOn.style.display = "none";
+  circle2.style.backgroundColor =  "#fff";
+  circle2.style.color =  "black";
+  circle3.style.backgroundColor = "rgba(255, 255, 255, 0)";
+  circle3.style.color = "#fff";
+}
 // Check Inputs
 function  checkName(){
     let myNameInput = document.getElementById("infoName");
@@ -90,7 +108,25 @@ function Achieve() {
   }
 }
 
+function checkPlan(){
+  if (document.getElementById("modeResume").innerHTML ==  "Choose a plan"){
+    stepInfo.style.display = "none";
+    stepPlan.style.display = "flex";
+    circle1.style.color = "white";
+    circle1.style.backgroundColor = "rgba(255, 255, 255, 0)";
+    circle2.style.backgroundColor = "rgb(255, 255, 255)";
+    circle2.style.color = "black";
+  }
+  else {
+    stepPlan.style.display = "none";
+    stepAddOn.style.display = "flex";
+    circle2.style.color = "white";
+    circle2.style.backgroundColor = "rgba(255, 255, 255, 0)";
+    circle3.style.backgroundColor = "rgb(255, 255, 255)";
+    circle3.style.color = "black";
 
+  }
+}
 
 
 // CHECK BOX (TOOGLE BETWEEN  MONTH AND YEAR PLANS)
@@ -113,4 +149,249 @@ checkBox =  document
     }
 });
 
-// Change color of Button plan after click
+// Change color of Button plan after click and tracking users choices
+// MONTHLY
+checkBox = document
+.getElementById("moiseArcade")
+.addEventListener("click", event =>{
+  moiseArcade.style.backgroundColor = "hsl(217, 100%, 97%)";
+  moiseArcade.style.border =  "1px solid  hsl(213, 96%, 18%)";
+
+  // setting other Monthly buttons to default
+  moiseAdvanced.style.backgroundColor = "#fff";
+  moiseAdvanced.style.border  = "1px solid hsl(229, 24%, 87%)";
+  moisePro.style.backgroundColor =  "#fff";
+  moisePro.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+   // setting all yearly buttons to default
+  anneeArcade.style.backgroundColor =  "#fff";
+  anneeArcade.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  anneeAdvanced.style.backgroundColor =  "#fff";
+  anneeAdvanced.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  anneePro.style.backgroundColor =  "#fff";
+  anneePro.style.border = "1px solid  hsl(229, 24%,  87%)";
+   
+
+  // taking the click  entry  into the summary box
+  document.getElementById("modeResume").innerHTML = "Arcade (Monthly)";
+  document.getElementById("priceResume").innerHTML = "$9/mo";
+  document.getElementById("modeTotal").innerHTML = "Total (per month)";
+})
+
+checkBox =  document
+.getElementById("moiseAdvanced")
+.addEventListener("click", event =>{
+  moiseAdvanced.style.backgroundColor = "hsl(217, 100%, 97%)";
+  moiseAdvanced.style.border = "1px solid hsl(213, 96%, 18%)";
+
+  // setting other Monthly buttons to default
+  moiseArcade.style.backgroundColor = "#fff";
+  moiseArcade.style.border  = "1px solid hsl(229, 24%, 87%)";
+  moisePro.style.backgroundColor =  "#fff";
+  moisePro.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+   // setting all yearly buttons to default
+  anneeArcade.style.backgroundColor =  "#fff";
+  anneeArcade.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  anneeAdvanced.style.backgroundColor =  "#fff";
+  anneeAdvanced.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  anneePro.style.backgroundColor =  "#fff";
+  anneePro.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  document.getElementById("modeResume").innerHTML = "Advanced  (Monthly)";
+  document.getElementById("priceResume").innerHTML = "$12/mo";
+  document.getElementById("modeTotal").innerHTML = "Total (per month)";
+})
+
+checkBox =  document
+.getElementById("moisePro")
+.addEventListener("click", event =>{
+  moisePro.style.backgroundColor = "hsl(217, 100%, 97%)";
+  moisePro.style.border = "1px solid hsl(213, 96%, 18%)";
+
+  // setting other Monthly buttons to default
+  moiseArcade.style.backgroundColor =  "#fff";
+  moiseArcade.style.border = "1px solid  hsl(229, 24%,  87%)";
+  moiseAdvanced.style.backgroundColor = "#fff";
+  moiseAdvanced.style.border  = "1px solid hsl(229, 24%, 87%)";
+ 
+
+   // setting all yearly buttons to default
+  anneeArcade.style.backgroundColor =  "#fff";
+  anneeArcade.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  anneeAdvanced.style.backgroundColor =  "#fff";
+  anneeAdvanced.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  anneePro.style.backgroundColor =  "#fff";
+  anneePro.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  document.getElementById("modeResume").innerHTML = "Pro  (Monthly)";
+  document.getElementById("priceResume").innerHTML = "$15/mo";
+  document.getElementById("modeTotal").innerHTML = "Total (per month)";
+})
+
+// YEARLY (ANNUALLY)
+checkBox = document
+.getElementById("anneeArcade")
+.addEventListener("click", event =>{
+  anneeArcade.style.backgroundColor = "hsl(217, 100%, 97%)";
+  anneeArcade.style.border =  "1px solid  hsl(213, 96%, 18%)";
+
+  // setting other yearly buttons to default
+  anneeAdvanced.style.backgroundColor =  "#fff";
+  anneeAdvanced.style.border = "1px solid  hsl(229, 24%,  87%)";
+  anneePro.style.backgroundColor =  "#fff";
+  anneePro.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  // setting all Monthly buttons to default
+  moiseArcade.style.backgroundColor =  "#fff";
+  moiseArcade.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  moiseAdvanced.style.backgroundColor = "#fff";
+  moiseAdvanced.style.border  = "1px solid hsl(229, 24%, 87%)";
+  moisePro.style.backgroundColor =  "#fff";
+  moisePro.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+   
+  // taking the click  entry  into the summary box
+  document.getElementById("modeResume").innerHTML = "Arcade (Yearly)";
+  document.getElementById("priceResume").innerHTML = "$90/mo";
+  document.getElementById("modeTotal").innerHTML = "Total (per year)";
+})
+
+checkBox = document
+.getElementById("anneeAdvanced")
+.addEventListener("click", event =>{
+  anneeAdvanced.style.backgroundColor = "hsl(217, 100%, 97%)";
+  anneeAdvanced.style.border =  "1px solid  hsl(213, 96%, 18%)";
+
+  // setting other yearly buttons to default
+  anneeArcade.style.backgroundColor =  "#fff";
+  anneeArcade.style.border = "1px solid  hsl(229, 24%,  87%)";
+  anneePro.style.backgroundColor =  "#fff";
+  anneePro.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  // setting all Monthly buttons to default
+  moiseArcade.style.backgroundColor =  "#fff";
+  moiseArcade.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  moiseAdvanced.style.backgroundColor = "#fff";
+  moiseAdvanced.style.border  = "1px solid hsl(229, 24%, 87%)";
+  moisePro.style.backgroundColor =  "#fff";
+  moisePro.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+   
+  // taking the click  entry  into the summary box
+  document.getElementById("modeResume").innerHTML = "Advanced (Yearly)";
+  document.getElementById("priceResume").innerHTML = "$120/mo";
+  document.getElementById("modeTotal").innerHTML = "Total (per year)";
+})
+
+checkBox = document
+.getElementById("anneePro")
+.addEventListener("click", event =>{
+  anneePro.style.backgroundColor = "hsl(217, 100%, 97%)";
+  anneePro.style.border =  "1px solid  hsl(213, 96%, 18%)";
+
+  // setting other yearly buttons to default
+  anneeArcade.style.backgroundColor =  "#fff";
+  anneeArcade.style.border = "1px solid  hsl(229, 24%,  87%)";
+  anneeAdvanced.style.backgroundColor =  "#fff";
+  anneeAdvanced.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  // setting all Monthly buttons to default
+  moiseArcade.style.backgroundColor =  "#fff";
+  moiseArcade.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+  moiseAdvanced.style.backgroundColor = "#fff";
+  moiseAdvanced.style.border  = "1px solid hsl(229, 24%, 87%)";
+  moisePro.style.backgroundColor =  "#fff";
+  moisePro.style.border = "1px solid  hsl(229, 24%,  87%)";
+
+   
+  // taking the click  entry  into the summary box
+  document.getElementById("modeResume").innerHTML = "Pro (Yearly)";
+  document.getElementById("priceResume").innerHTML = "$150/mo";
+  document.getElementById("modeTotal").innerHTML = "Total (per year)";
+})
+
+// Pick Add-ons  STEP3
+// Monthly Add-ons
+checkBox = document
+.getElementById("onlineMois")
+.addEventListener("click", event =>{
+  if(event.target.check){
+    document.getElementById("onlinePrice").innerHTML = "+$1/mo";
+    document.getElementById("modeTotal").innerHTML  = "Total (per month)";
+  }
+  else{
+    document.getElementById("onlinePrice").innerHTML = "+$0/mo";
+  }
+})
+
+checkBox = document
+.getElementById("storageMois")
+.addEventListener("click", event =>{
+  if(event.target.check){
+    document.getElementById("storagePrice").innerHTML = "+$2/mo";
+    document.getElementById("modeTotal").innerHTML  = "Total (per month)";
+  }
+  else{
+    document.getElementById("onlinePrice").innerHTML = "+$0/mo";
+  }
+})
+
+checkBox = document
+.getElementById("cutomizableMois")
+.addEventListener("click", event =>{
+  if(event.target.check){
+    document.getElementById("customizablePrice").innerHTML = "+$2/mo";
+    document.getElementById("modeTotal").innerHTML  = "Total (per month)";
+  }
+  else{
+    document.getElementById("onlinePrice").innerHTML = "+$0/mo";
+  }
+})
+
+// Yearly Add-ons
+checkBox = document
+.getElementById("onlineAnne")
+.addEventListener("click", event =>{
+  if(event.target.check){
+    document.getElementById("onlinePrice").innerHTML = "+$10/yr";
+    document.getElementById("modeTotal").innerHTML  = "Total (per year)";
+  }
+  else{
+    document.getElementById("onlinePrice").innerHTML = "+$0/yr";
+  }
+})
+
+checkBox = document
+.getElementById("storageAnne")
+.addEventListener("click", event =>{
+  if(event.target.check){
+    document.getElementById("storagePrice").innerHTML = "+$20/yr";
+    document.getElementById("modeTotal").innerHTML  = "Total (per year)";
+  }
+  else{
+    document.getElementById("onlinePrice").innerHTML = "+$0/yr";
+  }
+})
+
+checkBox = document
+.getElementById("cutomizableAnne")
+.addEventListener("click", event =>{
+  if(event.target.check){
+    document.getElementById("customizablePrice").innerHTML = "+$20/yr";
+    document.getElementById("modeTotal").innerHTML  = "Total (per year)";
+  }
+  else{
+    document.getElementById("onlinePrice").innerHTML = "+$0/yr";
+  }
+})
+
