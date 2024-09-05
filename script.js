@@ -140,8 +140,8 @@ function checkNum() {
     myNumError.innerHTML = "This field is required";
   } else if (myNumRegex.test(myNumInput.value) == false) {
     myNumError.innerHTML = "Must contain number";
-  } else if (myNumInput.value.trim().length !== 10) {
-    myNumError.innerHTML = "Invalid Phone Number";
+  } else if (myNumInput.value.trim().length !== 10 && myNumInput.value.trim().length !== 11) {
+  myNumError.innerHTML = "Invalid Phone Number";
   } else {
     myNumError.innerHTML = "";
   }
@@ -170,7 +170,7 @@ function Achieve() {
   let myMailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   if (
-    myNumInput.value.trim().length === 10 &&
+    myNumInput.value.trim().length === 10 || myNumInput.value.trim().length === 11 &&
     myNumRegex.test(myNumInput.value) === true &&
     myMailInput.value.trim().length !== 0 &&
     myMailRegex.test(myMailInput.value) === true &&
@@ -185,6 +185,18 @@ function Achieve() {
     circle2.style.color = "black";
   }
 }
+
+
+  // addEventListener("click", event=>{
+  //   if(event == document.getElementById("planMonth")){
+  //     console.log("planMonthSelected")
+
+  //   }
+  // })
+  
+
+
+
 
 function checkPlan(){
   if (document.getElementById("modeResume").innerHTML ==  "Choose a plan"){
@@ -427,7 +439,7 @@ checkBox = document
 })
 
 checkBox = document
-.getElementById("cutomizableMois")
+.getElementById("customizableMois")
 .addEventListener("click", event =>{
   if(event.target.checked){
     document.getElementById("customizablePrice").innerHTML = "+$2/mo";
@@ -464,7 +476,7 @@ checkBox = document
 })
 
 checkBox = document
-.getElementById("cutomizableAnne")
+.getElementById("customizableAnne")
 .addEventListener("click", event =>{
   if(event.target.checked){
     document.getElementById("customizablePrice").innerHTML = "+$20/yr";
@@ -515,3 +527,36 @@ function getPrice6(){
   document.getElementById("totalPrice").innerHTML = planPrice;
 }
 
+// Reset
+function reset(){
+  document.getElementById("onlineMois").checked  = false;
+  document.getElementById("storageMois").checked  = false;
+  document.getElementById("customizableMois").checked  = false;
+  document.getElementById("onlineAnne").checked  = false;
+  document.getElementById("storageAnne").checked  = false;
+  document.getElementById("customizableAnne").checked  = false;
+  document.getElementById("onlinePrice").innerHTML = "+0$";
+  document.getElementById("storagePrice").innerHTML = "+0$";
+  document.getElementById("customizablePrice").innerHTML = "+0$";
+   document.getElementById("modeResume").innerHTML = "Choose a plan";
+  document.getElementById("priceResume").innerHTML = "0$";
+
+  moiseArcade.style.backgroundColor = "#fff";
+  moiseArcade.style.border = "1px solid hsl(229, 24%, 87%)";
+
+  moiseAdvanced.style.backgroundColor = "#fff";
+  moiseAdvanced.style.border = "1px solid hsl(229, 24%, 87%)";
+
+  moisePro.style.backgroundColor = "#fff";
+  moisePro.style.border = "1px solid hsl(229, 24%, 87%)";
+
+  anneeArcade.style.backgroundColor = "#fff";
+  anneeArcade.style.border = "1px solid hsl(229, 24%, 87%)";
+
+  anneeAdvanced.style.backgroundColor = "#fff";
+  anneeAdvanced.style.border = "1px solid hsl(229, 24%, 87%)";
+
+  anneePro.style.backgroundColor = "#fff";
+  anneePro.style.border = "1px solid hsl(229, 24%, 87%)";
+
+}
