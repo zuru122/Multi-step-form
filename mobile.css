@@ -149,11 +149,17 @@
   }
 
   .stepInfo h1 {
+    margin-top: 0;
     font-size: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
   }
 
   .stepInfo p {
     font-size: 12px;
+    line-height: 1.5;
+    /* color: hsl(231, 11%, 63%); */
+    font-weight: 500;
   }
 
   #stepPlan {
@@ -176,7 +182,20 @@
   .stepPlan h1 {
     margin-top: 0;
     font-size: 20px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  .stepPlan p {
+    font-size: 12px;
+    line-height: 1.5;
+    /* color: hsl(231, 11%, 63%); */
+    font-weight: 500;
+  }
+
+  .stepPlan button p {
+    font-size: 14px;
+    font-weight: 600;
   }
 
   .para-size {
@@ -184,9 +203,17 @@
     line-height: 1.2;
   }
 
-  .stepAddOnh1 {
+  .stepAddOn h1 {
     margin-top: 0;
-    margin-left: 30px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  .stepAddOn p {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 500;
   }
 
   .stepSummary h1 {
@@ -286,6 +313,54 @@
     padding-right: 0px;
     font-size: 12px;
     font-weight: normal;
+  }
+
+  .stepSummary h1 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  .stepSummary p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: hsl(231, 11%, 63%);
+    font-weight: 500;
+  }
+  .flexResume {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .flexResume label {
+    display: flex;
+    align-items: center;
+  }
+  #resumeMonth {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flexTotal {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-top: 15px;
+    width: 95%;
+    padding: 1px 20px 10px 20px;
+    justify-content: space-between;
+  }
+
+  .flexTotal span {
+    font-size: 12px;
+    color: hsl(243 100% 62%);
+  }
+
+  #stepThankYou p {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: hsl(231, 11%, 63%);
   }
 
   /* .addsize {

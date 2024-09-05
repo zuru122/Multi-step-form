@@ -34,6 +34,84 @@ function  backStepTwo(){
   circle3.style.backgroundColor = "rgba(255, 255, 255, 0)";
   circle3.style.color = "#fff";
 }
+
+function goStepFour(){
+  stepSummary.style.display = "flex";
+  stepAddOn.style.display = "none";
+  circle3.style.color = "#fff";
+  circle3.style.backgroundColor = "rgba(255, 255, 255, 0)";
+  circle4.style.backgroundColor =  "rgb(255,255,255)";
+  circle4.style.color = "#000";
+
+    // Calculating the selected Totals from plans and add-ons
+  const  addOnPrice = document.getElementsByName("addOn").forEach(radio =>{
+    if(radio.checked){
+      console.log(radio.value);
+      console.log(document.getElementById("totalPrice").innerHTML);
+      const planPrice  =  document.getElementById("totalPrice").innerHTML;
+      console.log(planPrice);
+      document.getElementById("totalPrice").innerHTML =  parseInt(planPrice) + parseInt(radio.value);
+    }
+  });
+    
+}
+
+
+function  backStepThree(){
+  stepSummary.style.display = "none";
+  stepAddOn.style.display = "flex";
+  circle3.style.color = "#000";
+  circle3.style.backgroundColor = "rgba(255, 255, 255)";
+  circle4.style.backgroundColor  = "rgba(255,255,255,0)";
+  circle4.style.color = "#fff";
+
+    // Calculating the selected Totals from plans and add-ons
+  const  addOnPrice = document.getElementsByName("addOn").forEach(radio =>{
+    if(radio.checked){
+      console.log(radio.value);
+      console.log(document.getElementById("totalPrice").innerHTML);
+      const planPrice  =  document.getElementById("totalPrice").innerHTML;
+      console.log(planPrice);
+      document.getElementById("totalPrice").innerHTML =  parseInt(planPrice) -  parseInt(radio.value);
+    }
+  });
+
+}
+
+function goFromFourToTwo() {
+  stepSummary.style.display = "none";
+  stepPlan.style.display = "flex";
+  circle2.style.color = "black";
+  circle2.style.backgroundColor = "rgba(255, 255, 255)";
+  circle4.style.backgroundColor = "rgb(255, 255, 255, 0)";
+  circle4.style.color = "#fff";
+
+  const adOnnPrice = document.getElementsByName("addOn").forEach(radio => {
+    if (radio.checked) {
+      console.log(radio.value);
+      console.log(document.getElementById("totalPrice").innerHTML);
+      const planPrice = document.getElementById("totalPrice").innerHTML;
+      console.log(planPrice);
+      document.getElementById("totalPrice").innerHTML =
+        parseInt(planPrice) - parseInt(radio.value);
+    }
+  });
+}
+
+function goToStepThankYou(){
+  console.log(document.getElementById("modeResume").innerHTML);
+  if(document.getElementById("modeResume").innerHTML == "Choose a plan"){
+    stepSummary.style.display = "flex";
+    stepThankYou.style.display = "none";
+  }
+  else{
+    stepSummary.style.display = "none";
+    stepThankYou.style.display = "flex";
+  }
+}
+
+
+
 // Check Inputs
 function  checkName(){
     let myNameInput = document.getElementById("infoName");
@@ -130,7 +208,7 @@ function checkPlan(){
 
 
 // CHECK BOX (TOOGLE BETWEEN  MONTH AND YEAR PLANS)
-
+document.getElementById("monthYear").innerHTML ="/mo";
 checkBox =  document
 .getElementById("switch")
 .addEventListener("click", event=>{
@@ -139,12 +217,14 @@ checkBox =  document
         planMonth.style.display =  "none";
         adOnAnne.style.display = "flex";
         adOnMois.style.display =  "none";
+        document.getElementById("monthYear").innerHTML ="/yr";
     }
     else{
         planYear.style.display = "none";
         planMonth.style.display = "flex";
         adOnAnne.style.display = "none";
         adOnMois.style.display =  "flex";
+        document.getElementById("monthYear").innerHTML ="/mo";
 
     }
 });
@@ -325,7 +405,7 @@ checkBox = document
 checkBox = document
 .getElementById("onlineMois")
 .addEventListener("click", event =>{
-  if(event.target.check){
+  if(event.target.checked){
     document.getElementById("onlinePrice").innerHTML = "+$1/mo";
     document.getElementById("modeTotal").innerHTML  = "Total (per month)";
   }
@@ -337,7 +417,7 @@ checkBox = document
 checkBox = document
 .getElementById("storageMois")
 .addEventListener("click", event =>{
-  if(event.target.check){
+  if(event.target.checked){
     document.getElementById("storagePrice").innerHTML = "+$2/mo";
     document.getElementById("modeTotal").innerHTML  = "Total (per month)";
   }
@@ -349,7 +429,7 @@ checkBox = document
 checkBox = document
 .getElementById("cutomizableMois")
 .addEventListener("click", event =>{
-  if(event.target.check){
+  if(event.target.checked){
     document.getElementById("customizablePrice").innerHTML = "+$2/mo";
     document.getElementById("modeTotal").innerHTML  = "Total (per month)";
   }
@@ -362,7 +442,7 @@ checkBox = document
 checkBox = document
 .getElementById("onlineAnne")
 .addEventListener("click", event =>{
-  if(event.target.check){
+  if(event.target.checked){
     document.getElementById("onlinePrice").innerHTML = "+$10/yr";
     document.getElementById("modeTotal").innerHTML  = "Total (per year)";
   }
@@ -374,7 +454,7 @@ checkBox = document
 checkBox = document
 .getElementById("storageAnne")
 .addEventListener("click", event =>{
-  if(event.target.check){
+  if(event.target.checked){
     document.getElementById("storagePrice").innerHTML = "+$20/yr";
     document.getElementById("modeTotal").innerHTML  = "Total (per year)";
   }
@@ -386,7 +466,7 @@ checkBox = document
 checkBox = document
 .getElementById("cutomizableAnne")
 .addEventListener("click", event =>{
-  if(event.target.check){
+  if(event.target.checked){
     document.getElementById("customizablePrice").innerHTML = "+$20/yr";
     document.getElementById("modeTotal").innerHTML  = "Total (per year)";
   }
@@ -394,4 +474,44 @@ checkBox = document
     document.getElementById("onlinePrice").innerHTML = "+$0/yr";
   }
 })
+
+// Plan price function
+const planPrice = "0";
+console.log(planPrice);
+
+function getPrice1(){
+  const planPrice = "9";
+  console.log(planPrice);
+  document.getElementById("totalPrice").innerHTML = planPrice;
+}
+
+function getPrice2(){
+  const planPrice = "12";
+  console.log(planPrice);
+  document.getElementById("totalPrice").innerHTML = planPrice;
+}
+
+function getPrice3(){
+  const planPrice = "15";
+  console.log(planPrice);
+  document.getElementById("totalPrice").innerHTML = planPrice;
+}
+
+function getPrice4(){
+  const planPrice = "90";
+  console.log(planPrice);
+  document.getElementById("totalPrice").innerHTML = planPrice;
+}
+
+function getPrice5(){
+  const planPrice = "120"
+  console.log(planPrice);
+  document.getElementById("totalPrice").innerHTML = planPrice;
+}
+
+function getPrice6(){
+  const planPrice = "150";
+  console.log(planPrice);
+  document.getElementById("totalPrice").innerHTML = planPrice;
+}
 

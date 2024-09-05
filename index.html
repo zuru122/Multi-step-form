@@ -141,7 +141,7 @@
                   alt="advancePlan-img"
                 />
                 <p>Advanced</p>
-                <span class="priceMonth" id="priceMonth">Pro $12/mo</span>
+                <span class="priceMonth" id="priceMonth">$12/mo</span>
               </button>
 
               <button class="planButton" id="moisePro" onclick="getPrice3()">
@@ -210,7 +210,9 @@
 
           <div class="stepAddOn" id="stepAddOn">
             <h1 class="description">Pick add-ons</h1>
-            <p>Add-ons help enhance your gaming experience.</p>
+            <p class="para--adon">
+              Add-ons help enhance your gaming experience.
+            </p>
             <div id="adOnMois">
               <div class="addOnButton">
                 <div class="regroup">
@@ -356,8 +358,11 @@
               </div>
               <div class="flexTotal">
                 <p id="modeTotal">Total</p>
-                <span id="totalPrice"></span>
-                <span class="dollar">$</span>
+                <div class="total--margin-right">
+                  <span class="dollar">+$</span>
+                  <span id="totalPrice"></span>
+                  <span id="monthYear"></span>
+                </div>
               </div>
               <div class="buttonContainerstepFour">
                 <button onclick="backStepThree()" class="goBack">

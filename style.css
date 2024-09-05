@@ -117,30 +117,65 @@
   display: none;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 50px;
   text-align: center;
+}
+
+#stepThankYou h1 {
+  margin-bottom: 10px;
+}
+#stepThankYou p {
+  line-height: 1.5;
+  font-weight: 500;
+  color: hsl(231, 11%, 63%);
 }
 
 #stepThankYou img {
   width: 80px;
+  margin-bottom: 20px;
 }
 
 #stepInfo,
 #stepPlan,
 #stepAddOn,
-#stepSummary,
-#stepThankYou {
+#stepSummary {
   flex-direction: column;
   margin-top: 5%;
 }
 
 /* ----------------------------------------- */
 
-/* Step Info */
+/* Steps*/
+.stepInfo h1,
+.stepPlan h1,
+.stepAddOn h1,
+.stepSummary h1,
+.stepThankYou h1 {
+  color: hsl(213, 96%, 18%);
+}
+.stepInfo p,
+.stepPlan p {
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+}
+.flexError p {
+  color: hsl(213, 96%, 18%);
+}
+
+.stepPlan button p {
+  color: hsl(213, 96%, 18%);
+}
 .bottom--margin {
   margin-bottom: 10%;
 }
+.para--adon {
+  color: hsl(231, 11%, 63%);
+}
 
+.prix {
+  color: hsl(243, 100%, 62%);
+}
+/* Step Info */
 #stepInfo input {
   width: 100%;
   height: 40px;
@@ -275,6 +310,7 @@
   cursor: pointer;
   margin-left: 8px;
   font-size: 12px;
+  color: hsl(213, 96%, 18%);
 }
 /* ------------------------ */
 
@@ -363,7 +399,7 @@
   flex-direction: column;
 }
 
-#addOnMois {
+#adOnMois {
   display: flex;
   flex-direction: column;
 }
@@ -390,6 +426,10 @@
   -o-border-radius: 10px;
 }
 
+#priceResume {
+  font-weight: 600;
+}
+
 .containerResume button {
   background-color: rgba(250, 235, 215, 0);
   text-decoration: underline;
@@ -411,10 +451,18 @@
   background-color: hsl(243deg, 18%, 50%);
 }
 
+.flexResume button {
+  color: hsl(231, 11%, 63%);
+}
+
 .flexResume {
   display: flex;
+  color: hsl(213, 96%, 18%);
   justify-content: space-between;
   margin-top: 10px;
+}
+.flexResume p {
+  color: hsl(231, 11%, 63%);
 }
 .flexResume label {
   display: flex;
@@ -428,8 +476,9 @@
 .flexTotal {
   display: flex;
   align-items: center;
+  font-weight: 600;
   margin-top: 15px;
-  width: 80%;
+  width: 95%;
   padding: 1px 20px 10px 20px;
   justify-content: space-between;
 }
@@ -439,6 +488,17 @@
   color: hsl(243 100% 62%);
 }
 
+.total--margin-right {
+  display: flex;
+  align-items: center;
+}
+
+.dollar {
+  margin-right: 0;
+}
+#totalPrice {
+  margin-left: 0;
+}
 /* .dollar {
   margin-left: -239px;
 } */
